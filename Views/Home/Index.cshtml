@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MyShop.Models.Product>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>@L["Welcome to MyShop"]</h1>
+
+<div class="row">
+@foreach (var p in Model)
+{
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@p.Name</h5>
+                <p class="card-text">@p.Description</p>
+                <p class="card-text"><strong>@p.Price ₴</strong></p>
+
+                <p>
+                    @(p.Category == null ? "-" : L["Category_" + p.Category.Key])
+                </p>
+
+                <a class="btn btn-primary"
+                   asp-controller="Products"
+                   asp-action="Details"
+                   asp-route-id="@p.Id">
+                    @L["Details"]
+                </a>
+            </div>
+        </div>
+    </div>
+}
+</div>

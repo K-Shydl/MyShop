@@ -1,0 +1,27 @@
+@model MyShop.Models.Product
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+<h2>@L["Create Product"]</h2>
+<form asp-action="Create" method="post">
+  <div class="mb-3">
+    <label>@L["Name"]</label>
+    <input asp-for="Name" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>@L["Description"]</label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+  </div>
+  <div class="mb-3">
+    <label>@L["Price"]</label>
+    <input asp-for="Price" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label asp-for="CategoryId">@L["Category"]</label>
+    <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select"></select>
+  </div>
+  <button class="btn btn-primary">@L["Save"]</button>
+</form>

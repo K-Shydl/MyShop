@@ -1,0 +1,16 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+
+@{
+    ViewData["Title"] = "Потрібна авторизація";
+}
+<div class="text-center mt-5">
+    <h3>@L["ToPurchaseProductLabel"]</h3>
+    <p class="mt-4">
+        <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Login">@L["Login"]</a>
+        <a class="btn btn-secondary" asp-area="Identity" asp-page="/Account/Register">@L["Register"]</a>
+    </p>
+    <p class="mt-4">
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Index">@L["BackToHome"]</a>
+    </p>
+</div>

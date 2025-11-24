@@ -1,0 +1,54 @@
+@model IEnumerable<MyShop.Models.Product>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>@L["Products"]</h2>
+
+<form method="get" class="mb-3">
+    <select name="categoryId" onchange="this.form.submit()" class="form-select w-auto">
+        <option value="">@L["AllCategories"]</option>
+
+        @foreach (var c in ViewBag.Categories)
+        {
+            <option value="@c.Id" selected="@(c.Id == (int?)ViewBag.SelectedCategory)">
+                @L["Category_" + c.Key]
+            </option>
+        }
+    </select>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@L["Name"]</th>
+            <th>@L["Description"]</th>
+            <th>@L["Category"]</th>
+            <th>@L["Price"]</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Description</td>
+            <td>@(p.Category == null ? "-" : L["Category_" + p.Category.Key])</td>
+            <td>@p.Price ₴</td>
+            <td>
+                <a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@p.Id">
+                    @L["View"]
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div class="mt-3">
+  <a class="btn btn-primary" asp-controller="Home" asp-action="Index">@L["BackToHome"]</a>
+</div>

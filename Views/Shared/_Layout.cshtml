@@ -1,0 +1,129 @@
+﻿@using MyShop.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyShop</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyShop.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyShop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    @inject SignInManager<ApplicationUser> SignInManager
+                    @inject UserManager<ApplicationUser> UserManager
+
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Products" asp-action="Index">@L["Products"]</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">@L["Admin"]</a></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="PurchaseHistory" asp-action="Index">
+                                    @L["My purchases"]
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <ul class="navbar-nav">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            var user = await UserManager.GetUserAsync(User);
+
+                            <li class="nav-item">
+                                <span class="nav-link">@user.Email</span>
+                            </li>
+
+                            <li class="nav-item">
+                                <form method="post" asp-area="Identity" asp-page="/Account/Logout">
+                                    <button type="submit" class="btn btn-link nav-link" style="cursor:pointer;">
+                                        @L["Logout"]
+                                    </button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Login">@L["Login"]</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                &copy; 2025 - MyShop
+            </div>
+
+            <div>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var currentUser = await UserManager.GetUserAsync(User);
+                    decimal balance = currentUser?.Balance ?? 0m;
+
+                    <span>@L["Balance"]: <strong>@balance.ToString("0.00") ₴</strong></span>
+
+                    <form asp-controller="Purchases" asp-action="TopUp"
+                          method="post" style="display:inline; margin-left:10px;">
+                        <button class="btn btn-sm btn-outline-success" type="submit">
+                            @L["20 UAH"]
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <span>@L["Balance"]: <strong>—</strong></span>
+                }
+            </div>
+
+            <div style="margin-left:20px;">
+                @{
+                    var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
+                    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+                }
+                <form method="post" asp-controller="Language" asp-action="SetLanguage">
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                    <select name="culture" onchange="this.form.submit()" class="form-select form-select-sm">
+                        <option value="uk-UA" selected="@(currentCulture == "uk-UA")">Українська</option>
+                        <option value="en-US" selected="@(currentCulture == "en-US")">English</option>
+                    </select>
+                </form>
+            </div>
+
+            <div>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">@L["Privacy"]</a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

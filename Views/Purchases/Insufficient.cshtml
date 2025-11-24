@@ -1,0 +1,12 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+
+@{
+    ViewData["Title"] = "Недостатньо коштів";
+}
+<div class="text-center mt-5">
+    <h3>@L["PurchaseUnsuccess"]</h3>
+    <p class="mt-4">
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Index">@L["BackToHome"]</a>
+    </p>
+</div>

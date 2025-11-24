@@ -1,0 +1,46 @@
+@model IEnumerable<MyShop.Models.Product>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+
+@{
+    ViewData["Title"] = "Admin - Products";
+}
+<h2>@L["AdminProducts"]</h2>
+
+<p><a class="btn btn-success" asp-action="Create">@L["CreateNewProduct"]</a></p>
+
+<table class="table">
+<thead>
+<tr>
+    <th>@L["Name"]</th>
+    <th>@L["Description"]</th>
+    <th>@L["Price"]</th>
+    <th>@L["Category"]</th>
+    <th></th>
+</tr>
+</thead>
+<tbody>
+@foreach(var p in Model)
+{
+  <tr>
+    <td>@p.Name</td>
+    <td>@p.Description</td>
+    <td>@p.Price ₴</td>
+    <td>@(p.Category == null ? "-" : L["Category_" + p.Category.Key])</td>
+
+    <td>
+      <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@p.Id">@L["Edit"]</a>
+
+      <form asp-action="Delete" method="post" style="display:inline">
+        <input type="hidden" name="id" value="@p.Id" />
+        <button type="submit" class="btn btn-sm btn-danger">@L["Delete"]</button>
+      </form>
+    </td>
+  </tr>
+}
+</tbody>
+</table>
+
+<div class="mt-3">
+  <a class="btn btn-primary" asp-controller="Home" asp-action="Index">@L["BackToHome"]</a>
+</div>

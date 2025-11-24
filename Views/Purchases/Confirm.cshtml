@@ -1,0 +1,16 @@
+@model MyShop.Models.Product
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer L
+@{
+    ViewData["Title"] = "Purchase Confirm";
+}
+<div class="text-center mt-5">
+    <h3>@L["PurchaseAreYouSure"]</h3>
+    <h4 class="mt-3">@Model.Name — @Model.Price ₴</h4>
+
+    <form asp-action="ConfirmBuy" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button type="submit" class="btn btn-danger mt-3">@L["PurchaseConfirm"]</button>
+        <a class="btn btn-secondary mt-3" asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id">@L["Cancel"]</a>
+    </form>
+</div>
