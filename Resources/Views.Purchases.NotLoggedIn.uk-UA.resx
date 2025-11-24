@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ToPurchaseProductLabel"><value>Щоб купити товар, будь ласка, увійдіть в акаунт або зареєструйтеся.</value></data>
+  <data name="Login"><value>Увійти</value></data>
+  <data name="Register"><value>Зареєструватися</value></data>
+  <data name="BackToHome"><value>На гол. сторінку</value></data>
+</root>

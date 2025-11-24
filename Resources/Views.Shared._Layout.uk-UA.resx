@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Products" xml:space="preserve"><value>Товари</value></data>
+  <data name="Admin" xml:space="preserve"><value>Адмін</value></data>
+  <data name="Login" xml:space="preserve"><value>Увійти</value></data>
+  <data name="Logout" xml:space="preserve"><value>Вийти</value></data>
+  <data name="Balance" xml:space="preserve"><value>Баланс</value></data>
+  <data name="Privacy" xml:space="preserve"><value>Політика конфід.</value></data>
+  <data name="My purchases" xml:space="preserve"><value>Мої покупки</value></data>
+  <data name="20 UAH" xml:space="preserve"><value>Поповнити рахунок на 20 грн</value></data>
+</root>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ToPurchaseProductLabel"><value>To purchase an product, please log in or register.</value></data>
+  <data name="Login"><value>Login</value></data>
+  <data name="Register"><value>Register</value></data>
+  <data name="BackToHome"><value>To the main page</value></data>
+</root>

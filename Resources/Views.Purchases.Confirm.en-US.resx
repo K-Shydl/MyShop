@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PurchaseAreYouSure"><value>Are you sure you want to buy this product?</value></data>
+  <data name="PurchaseConfirm"><value>Confirm purchase</value></data>
+  <data name="Cancel"><value>Cancel</value></data>
+</root>

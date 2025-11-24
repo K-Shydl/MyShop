@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PurchaseAreYouSure"><value>Ви впевнені, що хочете купити цей товар?</value></data>
+  <data name="PurchaseConfirm"><value>Підтвердити купівлю</value></data>
+  <data name="Cancel"><value>Скасувати</value></data>
+</root>

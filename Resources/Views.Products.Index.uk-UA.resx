@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="AllCategories"><value>Усі категорії</value></data>
+  <data name="Products"><value>Товари</value></data>
+  <data name="Name"><value>Назва</value></data>
+  <data name="Description"><value>Опис</value></data>
+  <data name="Category"><value>Категорія</value></data>
+  <data name="Price"><value>Ціна</value></data>
+  <data name="Category_Electronics"><value>Електроніка</value></data>
+  <data name="Category_Books"><value>Книги</value></data>
+  <data name="Category_Kitchen"><value>Кухонні прилади</value></data>
+  <data name="Category_Games"><value>Ігри</value></data>
+  <data name="View"><value>Переглянути</value></data>
+  <data name="BackToHome"><value>На гол. сторінку</value></data>
+</root>

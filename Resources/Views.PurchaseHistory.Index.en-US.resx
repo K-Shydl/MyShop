@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PurchaseHistoryLabel"><value>Purchase History</value></data>
+  <data name="ProductName"><value>Product Name</value></data>
+  <data name="Description"><value>Description</value></data>
+  <data name="Price"><value>Price</value></data>
+  <data name="Category"><value>Category</value></data>
+  <data name="Category_Electronics"><value>Electronics</value></data>
+  <data name="Category_Books"><value>Books</value></data>
+  <data name="Category_Kitchen"><value>Kitchen Stuff</value></data>
+  <data name="Category_Games"><value>Games</value></data>
+  <data name="Date"><value>Date</value></data>
+  <data name="BackToHome"><value>To the main page</value></data>
+</root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="AdminProducts"><value>Products</value></data>
+  <data name="CreateNewProduct"><value>Create New Product</value></data>
+  <data name="Name"><value>Name</value></data>
+  <data name="Description"><value>Description</value></data>
+  <data name="Category"><value>Category</value></data>
+  <data name="Price"><value>Price</value></data>
+  <data name="Category_Electronics"><value>Electronics</value></data>
+  <data name="Category_Books"><value>Books</value></data>
+  <data name="Category_Kitchen"><value>Kitchen Stuff</value></data>
+  <data name="Category_Games"><value>Games</value></data>
+  <data name="Edit"><value>Edit</value></data>
+  <data name="Delete"><value>Delete</value></data>
+  <data name="BackToHome"><value>To the main page</value></data>
+</root>

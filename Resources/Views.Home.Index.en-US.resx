@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Welcome to MyShop" xml:space="preserve"><value>Welcome to MyShop</value></data>
+  <data name="Details" xml:space="preserve"><value>Details</value></data>
+  <data name="Category_Electronics"><value>Electronics</value></data>
+  <data name="Category_Books"><value>Books</value></data>
+  <data name="Category_Kitchen"><value>Kitchen Stuff</value></data>
+  <data name="Category_Games"><value>Games</value></data>
+</root>

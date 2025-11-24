@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PurchaseUnsuccess"><value>Oopsie-doopsie! It seems like you don't have enough money in your account to purchase this product.</value></data>
+  <data name="BackToHome"><value>To the main page</value></data>
+</root>

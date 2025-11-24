@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="AdminProducts"><value>Товари</value></data>
+  <data name="CreateNewProduct"><value>Додати новий товар</value></data>
+  <data name="Name"><value>Назва</value></data>
+  <data name="Description"><value>Опис</value></data>
+  <data name="Category"><value>Категорія</value></data>
+  <data name="Price"><value>Ціна</value></data>
+  <data name="Category_Electronics"><value>Електроніка</value></data>
+  <data name="Category_Books"><value>Книги</value></data>
+  <data name="Category_Kitchen"><value>Кухонні прилади</value></data>
+  <data name="Category_Games"><value>Ігри</value></data>
+  <data name="Edit"><value>Редагувати</value></data>
+  <data name="Delete"><value>Видалити</value></data>
+  <data name="BackToHome"><value>На гол. сторінку</value></data>
+</root>

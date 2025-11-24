@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Category_Electronics"><value>Електроніка</value></data>
+  <data name="Category_Books"><value>Книги</value></data>
+  <data name="Category_Kitchen"><value>Кухонні прилади</value></data>
+  <data name="Category_Games"><value>Ігри</value></data>
+</root>

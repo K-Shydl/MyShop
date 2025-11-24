@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="PurchaseSuccess"><value>Thank you! The purchase was successful.</value></data>
+  <data name="BackToHome"><value>To the main page</value></data>
+</root>
